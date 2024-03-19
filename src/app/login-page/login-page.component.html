@@ -1,49 +1,66 @@
-<p>login-page works!</p>
-<div class="main-card">
-    <mat-card class="card-size">
-        <mat-card-content>
-          <div class="example-container">
-            <mat-card  class="card-size-2">
-                <mat-card-content>
-                    <img src="../../assets/images/main-contact-logo.png" alt="contact" class="contact-logo">
-                    <h1><b class="cus-bold">C</b><small>ontacts</small><b class="cus-bold">m</b><small>anager</small></h1>
-                </mat-card-content>
-            </mat-card>
-            <mat-form-field class="feild-adjustment">
-              <mat-label>Enter your email</mat-label>
-              <input
-                matInput
-                placeholder="pat@example.com"
-                [formControl]="email"
-                required
-              />
-              <mat-error *ngIf="email.invalid">{{ getErrorMessage('email') }}</mat-error>
-            </mat-form-field>
-      
-            <mat-form-field  class="feild-adjustment">
-              <mat-label>Enter your password</mat-label>
-              <input matInput 
-              [formControl]="password"
-              [type]="hide ? 'password' : 'text'" 
-              required/>
-              <mat-error *ngIf="password.invalid">{{ getErrorMessage('pass') }}</mat-error>
-              <button
-                mat-icon-button
-                matSuffix
-                (click)="hide = !hide"
-                [attr.aria-label]="'Hide password'"
-                [attr.aria-pressed]="hide"
-              >
-                <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
-              </button>
-            </mat-form-field>
-
-            <button mat-fab extended color="primary">
-                <mat-icon>done</mat-icon>
-                Login
-              </button>
-          </div>
-        </mat-card-content>
-      </mat-card>
+<div>
+  <h1>email:123@gmail.com</h1>
+  <h1>password:123@</h1>
 </div>
+<div class="main-card">
+  <mat-card class="card-size">
+    <mat-card-content>
+      <div class="example-container">
+        <mat-card class="card-size-2">
+          <mat-card-content>
+            <img
+              src="../../assets/images/contact-logo.jpg"
+              alt="contact"
+              class="contact-logo"
+            />
+            <h1>
+              <b class="cus-bold">C</b><small>ontacts</small
+              ><b class="cus-bold">m</b><small>anager</small>
+            </h1>
+          </mat-card-content>
+        </mat-card>
+        <mat-form-field class="feild-adjustment">
+          <mat-label>Enter your email</mat-label>
+          <input
+            matInput
+            placeholder="pat@example.com"
+            [formControl]="email"
+            required
+          />
+          <mat-error *ngIf="email.invalid">{{
+            getErrorMessage("email")
+          }}</mat-error>
+        </mat-form-field>
 
+        <mat-form-field class="feild-adjustment">
+          <mat-label>Enter your password</mat-label>
+          <input
+            matInput
+            [formControl]="password"
+            [type]="hide ? 'password' : 'text'"
+            required
+          />
+          <mat-error *ngIf="password.invalid">{{
+            getErrorMessage("pass")
+          }}</mat-error>
+          <button
+            mat-icon-button
+            matSuffix
+            (click)="hide = !hide"
+            [attr.aria-label]="'Hide password'"
+            [attr.aria-pressed]="hide"
+          >
+            <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+          </button>
+        </mat-form-field>
+        <mat-error *ngIf="loginConformation"
+          ><b>please enter the right details</b>
+        </mat-error>
+        <button mat-fab extended color="primary" (click)="login()">
+          <mat-icon>done</mat-icon>
+          Login
+        </button>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>
