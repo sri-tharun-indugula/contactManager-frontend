@@ -11,8 +11,9 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
+import { CardContactsManagerComponent } from './card-contacts-manager/card-contacts-manager.component';
 @NgModule({
-  declarations: [AppComponent, LoginPageComponent],
+  declarations: [AppComponent, LoginPageComponent, CardContactsManagerComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
