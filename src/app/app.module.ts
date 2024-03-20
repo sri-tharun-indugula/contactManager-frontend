@@ -11,9 +11,11 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
+import {MatTableModule} from '@angular/material/table';
 import { CardContactsManagerComponent } from './card-contacts-manager/card-contacts-manager.component';
+import { ContactManagerTableComponent } from './contact-manager-table/contact-manager-table.component';
 @NgModule({
-  declarations: [AppComponent, LoginPageComponent, CardContactsManagerComponent],
+  declarations: [AppComponent, LoginPageComponent, CardContactsManagerComponent, ContactManagerTableComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -25,6 +27,7 @@ import { CardContactsManagerComponent } from './card-contacts-manager/card-conta
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
+    MatTableModule
    
   ],
   providers: [],
