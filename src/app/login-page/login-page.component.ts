@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { MainContactService } from '../main-contact.service';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-login-page',
   templateUrl: './login-page.component.html',
@@ -12,7 +13,7 @@ export class LoginPageComponent {
   hide = true;
   loginConformation=false;
 
-  constructor(private maincontact: MainContactService) {
+  constructor(private maincontact: MainContactService,private route:Router) {
 
   }
 
@@ -38,6 +39,10 @@ export class LoginPageComponent {
     if(!this.email.invalid&&!this.password.invalid){
       const loginData={email:this.email.value,password:this.password.value}
       this.loginConformation=this.maincontact.loginValidator(loginData)
+      if(!this.maincontact.loginValidator(loginData)){
+
+        this.route.navigate(['/contact-list'])
+      }
     }
     console.log(this.loginConformation)
   }
