@@ -10,7 +10,6 @@ import { MainContactService } from './main-contact.service';
 export class AppComponent {
   title = 'contactManager-frontend';
   constructor(private mainContact:MainContactService){
-this.mainContact.getContacts();
   }
 
  

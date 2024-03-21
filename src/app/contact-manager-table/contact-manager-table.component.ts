@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MainContactService } from '../main-contact.service';
 export interface PeriodicElement {
   name: string;
   position: number;
@@ -26,5 +27,17 @@ export class ContactManagerTableComponent {
   ];
 
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
+  displayedColumns1: string[] = ['_id', 'name', 'email', 'phone','action']
   dataSource = this.ELEMENT_DATA;
+  dataSource1: any;
+
+  constructor(private mainContact:MainContactService){
+
+  }
+  ngOnInit(){
+    console.log('111',this.mainContact.getContacts())
+  this.mainContact.getContacts().subscribe((res)=>{
+      this.dataSource1=res;
+    })
+  }
 }

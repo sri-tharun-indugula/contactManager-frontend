@@ -2,24 +2,21 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class MainContactService {
+  constructor(private http: HttpClient) {}
 
-  constructor(private http:HttpClient) { }
-
-  loginValidator(values:any){
-    console.log(values,'111:service')
-    if(values.email=='123@gmail.com' && values.password=='123@'){
-      console.log('111:true logi')
-      return false
+  loginValidator(values: any) {
+    console.log(values, '111:service');
+    if (values.email == '123@gmail.com' && values.password == '123@') {
+      console.log('111:true logi');
+      return false;
     }
-    return true
+    return true;
   }
 
-  getContacts(){
-    return this.http.get('http://localhost:1000/api/contacts').subscribe((details:any)=>{
-      console.log(details,'111:contact')
-    });
+  getContacts() {
+    return this.http.get('http://localhost:1000/api/contacts');
   }
 }
