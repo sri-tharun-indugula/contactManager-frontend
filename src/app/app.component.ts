@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { MainContactService } from './main-contact.service';
 
 @Component({
   selector: 'app-root',
@@ -8,8 +9,8 @@ import { Router } from '@angular/router';
 })
 export class AppComponent {
   title = 'contactManager-frontend';
-  constructor(private router:Router){
-
+  constructor(private mainContact:MainContactService){
+this.mainContact.getContacts();
   }
 
  
