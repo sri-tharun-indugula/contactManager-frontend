@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -5,7 +6,7 @@ import { Injectable } from '@angular/core';
 })
 export class MainContactService {
 
-  constructor() { }
+  constructor(private http:HttpClient) { }
 
   loginValidator(values:any){
     console.log(values,'111:service')
@@ -14,5 +15,11 @@ export class MainContactService {
       return false
     }
     return true
+  }
+
+  getContacts(){
+    return this.http.get('http://localhost:1000/api/contacts').subscribe((details:any)=>{
+      console.log(details,'111:contact')
+    });
   }
 }

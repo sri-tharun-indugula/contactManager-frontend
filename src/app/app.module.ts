@@ -14,6 +14,7 @@ import {MatCardModule} from '@angular/material/card';
 import {MatTableModule} from '@angular/material/table';
 import { CardContactsManagerComponent } from './card-contacts-manager/card-contacts-manager.component';
 import { ContactManagerTableComponent } from './contact-manager-table/contact-manager-table.component';
+import {  HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [AppComponent, LoginPageComponent, CardContactsManagerComponent, ContactManagerTableComponent],
   imports: [
@@ -27,7 +28,7 @@ import { ContactManagerTableComponent } from './contact-manager-table/contact-ma
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
-    MatTableModule
+    MatTableModule,HttpClientModule
    
   ],
   providers: [],
