@@ -15,8 +15,9 @@ import {MatTableModule} from '@angular/material/table';
 import { CardContactsManagerComponent } from './card-contacts-manager/card-contacts-manager.component';
 import { ContactManagerTableComponent } from './contact-manager-table/contact-manager-table.component';
 import {  HttpClientModule } from '@angular/common/http';
+import { ContactManagerAddDialougeboxComponent } from './contact-manager-add-dialougebox/contact-manager-add-dialougebox.component';
 @NgModule({
-  declarations: [AppComponent, LoginPageComponent, CardContactsManagerComponent, ContactManagerTableComponent],
+  declarations: [AppComponent, LoginPageComponent, CardContactsManagerComponent, ContactManagerTableComponent, ContactManagerAddDialougeboxComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
